@@ -1,7 +1,7 @@
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
-from config import get_settings, VECTOR_DIR
+from core.config import get_settings, VECTOR_DIR
 
 
 class SafeRAGRetriever:
@@ -9,7 +9,7 @@ class SafeRAGRetriever:
         settings = get_settings()
 
         embeddings = OpenAIEmbeddings(
-            model=settings.embedding_model,
+            model=settings.openai_embedding_model,
             api_key=settings.openai_api_key,
             base_url=settings.openai_base_url,
         )

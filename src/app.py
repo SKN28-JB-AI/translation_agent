@@ -1,9 +1,9 @@
 import streamlit as st
 
-from agent import MarketBridgeRAGAgent
-from universal_document_pipeline import UniversalDocumentPipeline
+from agents.agent import MarketBridgeRAGAgent
+from agents.universal_document_pipeline import UniversalDocumentPipeline
 
-from app_pages import (
+from ui.app_pages import (
     COUNTRY_OPTIONS,
     MODE_OPTIONS,
     clear_state_by_prefix,

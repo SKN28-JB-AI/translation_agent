@@ -1,7 +1,7 @@
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 
-from config import get_settings, VECTOR_DIR
+from core.config import get_settings, VECTOR_DIR
 from document_builder import build_all_documents
 
 

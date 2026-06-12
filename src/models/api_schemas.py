@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
-from universal_document_schema import TranslatedUniversalDocument
+
+from models.universal_document_schema import TranslatedUniversalDocument
 
 
 class TextTranslateRequest(BaseModel):

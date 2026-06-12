@@ -1,7 +1,7 @@
-from schemas import AgentRequest
-from pdf_utils import extract_text_from_pdf_bytes, check_pdf_text_quality
-from universal_document_pipeline import review_result_to_text
-from universal_pdf_renderer import make_universal_report_pdf
+from models.schemas import AgentRequest
+from documents.pdf_utils import extract_text_from_pdf_bytes, check_pdf_text_quality
+from agents.universal_document_pipeline import review_result_to_text
+from documents.universal_pdf_renderer import make_universal_report_pdf
 
 
 def extract_pdf_text_from_upload(uploaded_file):

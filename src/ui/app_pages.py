@@ -1,6 +1,6 @@
 import streamlit as st
 
-from app_services import (
+from services.app_services import (
     extract_pdf_text_from_upload,
     run_text_translation,
     run_forward_pdf_translation,

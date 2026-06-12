@@ -1,6 +1,6 @@
 from pathlib import Path
 import pandas as pd
-from config import DATA_DIR
+from core.config import DATA_DIR
 
 
 def _contains(text: str, keyword: str) -> bool:

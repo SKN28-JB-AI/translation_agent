@@ -19,7 +19,7 @@ from reportlab.platypus import (
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-from universal_document_schema import TranslatedUniversalDocument, UniversalBlock
+from models.universal_document_schema import TranslatedUniversalDocument, UniversalBlock
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]

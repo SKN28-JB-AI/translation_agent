@@ -1,12 +1,18 @@
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from config import get_settings
-from prompts import COUNTRY_INFO, SYSTEM_PROMPT, USER_PROMPT_TEMPLATE
-from schemas import AgentRequest, AgentResponse
-from exact_matcher import build_exact_match_context
-from rag_retriever import SafeRAGRetriever, format_docs
-from pdf_utils import split_text_by_length
+from core.config import get_settings
+from core.prompts import (
+    COUNTRY_INFO,
+    SYSTEM_PROMPT,
+    USER_PROMPT_TEMPLATE
+)
+
+from documents.pdf_utils import split_text_by_length
+from models.schemas import AgentRequest, AgentResponse
+from rag.rag_retriever import format_docs
+from rag.rag_retriever import SafeRAGRetriever as MarketBridgeRetriever
+from rag.exact_matcher import build_exact_match_context
 
 
 PDF_TRANSLATION_ONLY_PROMPT = """
@@ -93,7 +99,7 @@ class MarketBridgeRAGAgent:
             temperature=0.2,
         )
 
-        self.retriever = SafeRAGRetriever()
+        self.retriever = MarketBridgeRetriever()
 
     def run(self, request: AgentRequest) -> AgentResponse:
         """

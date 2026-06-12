@@ -3,9 +3,15 @@ import json
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from config import get_settings
-from prompts import COUNTRY_INFO
-from universal_document_schema import (
+from core.config import get_settings
+from core.prompts import (
+    COUNTRY_INFO
+)
+
+from core.config import get_settings
+from core.prompts import COUNTRY_INFO
+
+from models.universal_document_schema import (
     UniversalDocument,
     TranslatedUniversalDocument,
     TranslationReviewResult,

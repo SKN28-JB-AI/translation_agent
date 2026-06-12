@@ -2,15 +2,15 @@ from fastapi import FastAPI, File, Form, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 
-from agent import MarketBridgeRAGAgent
-from universal_document_pipeline import (
+from agents.agent import MarketBridgeRAGAgent
+from agents.universal_document_pipeline import (
     UniversalDocumentPipeline,
     review_result_to_text,
 )
-from universal_pdf_renderer import make_universal_report_pdf
-from pdf_utils import extract_text_from_pdf_bytes, check_pdf_text_quality
+from documents.universal_pdf_renderer import make_universal_report_pdf
+from documents.pdf_utils import extract_text_from_pdf_bytes, check_pdf_text_quality
 
-from api_schemas import (
+from models.api_schemas import (
     TextTranslateRequest,
     TextTranslateResponse,
     ReportReviewRequest,

@@ -3,7 +3,7 @@ import json
 import pandas as pd
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from config import DATA_DIR
+from core.config import DATA_DIR
 
 
 def csv_row_to_text(row: pd.Series) -> str:

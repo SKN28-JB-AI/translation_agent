@@ -6,7 +6,7 @@ import fitz  # PyMuPDF
 from PIL import Image
 from openai import OpenAI
 
-from config import get_settings
+from core.config import get_settings
 
 
 def render_pdf_page_to_png_bytes(page, zoom: float = 2.5) -> bytes:
