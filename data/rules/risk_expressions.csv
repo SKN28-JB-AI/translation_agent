@@ -1,0 +1,7 @@
+﻿expression,risk_type,recommended_expression,reason
+무조건,absolute_claim,조건 충족 시,조건 없이 혜택이 제공되는 것처럼 오해될 수 있음
+100% 안전,absolute_safety,상품 설명서와 유의사항을 확인해야 합니다,금융 상품에서 절대적 안전을 보장하는 표현은 위험할 수 있음
+손실 없음,no_loss_claim,원금 손실 가능성 또는 유의사항을 확인해야 합니다,손실 가능성이 전혀 없는 것처럼 보일 수 있음
+수익 보장,guaranteed_return,조건에 따라 혜택을 받을 수 있습니다,수익이 확정적으로 보장되는 것처럼 오해될 수 있음
+누구나 고수익,overgeneralization,조건을 충족한 고객에게 혜택이 제공될 수 있습니다,모든 고객에게 동일한 고수익이 보장되는 것처럼 보일 수 있음
+최고의 혜택,exaggeration,다양한 혜택,객관적 근거 없이 최고라고 표현하면 과장으로 보일 수 있음
