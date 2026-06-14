@@ -2,6 +2,7 @@ from fastapi import FastAPI, File, Form, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 
+from models.schemas import AgentRequest
 from agents.agent import MarketBridgeRAGAgent
 from agents.universal_document_pipeline import (
     UniversalDocumentPipeline,
@@ -49,14 +50,19 @@ def health():
 @app.post("/api/text/translate", response_model=TextTranslateResponse)
 def translate_text(request: TextTranslateRequest):
     try:
-        result = agent.run(request)
+        result = agent.run(
+            AgentRequest(
+                text=request.text,
+                target_country=request.target_country,
+                output_style=request.output_style,
+                task_type=request.task_type,
+            )
+        )
 
         return TextTranslateResponse(
             target_country_ko=result.target_country_ko,
             target_language_ko=result.target_language_ko,
             result_markdown=result.result_markdown,
-            exact_matches=result.exact_matches,
-            retrieved_context=result.retrieved_context,
         )
 
     except Exception as e:

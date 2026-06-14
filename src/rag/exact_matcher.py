@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+
 from core.config import DATA_DIR
 
 
@@ -45,12 +46,6 @@ def build_exact_match_context(text: str) -> str:
             "term_ko",
             text,
             "정확 매칭: 마케팅 용어",
-        ),
-        _scan_csv(
-            DATA_DIR / "glossary" / "slang_terms.csv",
-            "expression",
-            text,
-            "정확 매칭: 밈/은어",
         ),
         _scan_csv(
             DATA_DIR / "glossary" / "finance_terms.csv",
